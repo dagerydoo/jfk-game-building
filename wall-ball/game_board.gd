@@ -9,6 +9,9 @@ extends Node2D
 
 @export var paddle_speed = 600.0
 
+var left_score = 0
+var right_score = 0
+
 func _ready() -> void:
 	_reset_ball()
 
@@ -33,3 +36,13 @@ func _reset_ball() -> void:
 		starting_angle += PI
 	ball.linear_velocity = ball_linear_velocity.rotated(starting_angle)
 	add_child.call_deferred(ball)
+
+
+func _on_walls_ball_hit_left_wall() -> void:
+	right_score += 1
+	print("Right score: ", right_score)
+
+
+func _on_walls_ball_hit_right_wall() -> void:
+	left_score += 1
+	print("Left score: ", left_score)
