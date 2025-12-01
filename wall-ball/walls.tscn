@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkrlk11k0f2fo"]
+[gd_scene load_steps=15 format=3 uid="uid://dkrlk11k0f2fo"]
 
+[ext_resource type="Script" uid="uid://db86rbb8q5nx4" path="res://walls.gd" id="1_jt0p1"]
 [ext_resource type="PhysicsMaterial" uid="uid://dnrrpv8dmfa6q" path="res://bouncy_physics.tres" id="1_xxkwp"]
 
 [sub_resource type="Gradient" id="Gradient_oelu8"]
@@ -39,6 +40,7 @@ gradient = SubResource("Gradient_ftpcs")
 size = Vector2(20, 648)
 
 [node name="Walls" type="Node2D"]
+script = ExtResource("1_jt0p1")
 
 [node name="Top" type="StaticBody2D" parent="."]
 position = Vector2(576, 10)
@@ -97,3 +99,6 @@ shape = SubResource("RectangleShape2D_ftpcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right/Area2D"]
 shape = SubResource("RectangleShape2D_ftpcs")
+
+[connection signal="body_entered" from="Left/Area2D" to="." method="_on_left_area_2d_body_entered"]
+[connection signal="body_entered" from="Right/Area2D" to="." method="_on_right_area_2d_body_entered"]
