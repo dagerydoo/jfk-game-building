@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7wviut6fmfbr"]
+[gd_scene load_steps=4 format=3 uid="uid://c7wviut6fmfbr"]
 
 [ext_resource type="PackedScene" uid="uid://crajdaofyk37h" path="res://ball.tscn" id="1_xrvgy"]
 [ext_resource type="PackedScene" uid="uid://dkrlk11k0f2fo" path="res://walls.tscn" id="2_i37i2"]
+[ext_resource type="PackedScene" uid="uid://d30k30b1x451q" path="res://paddle.tscn" id="3_17g6i"]
 
 [node name="GameBoard" type="Node2D"]
 
@@ -11,3 +12,9 @@ linear_velocity = Vector2(500, -500)
 linear_damp_mode = 1
 
 [node name="Walls" parent="." instance=ExtResource("2_i37i2")]
+
+[node name="RightPaddle" parent="." instance=ExtResource("3_17g6i")]
+position = Vector2(1052, 324)
+
+[node name="Paddle" parent="." instance=ExtResource("3_17g6i")]
+position = Vector2(100, 324)
