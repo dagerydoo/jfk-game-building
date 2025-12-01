@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7wviut6fmfbr"]
+
+[ext_resource type="PackedScene" uid="uid://crajdaofyk37h" path="res://ball.tscn" id="1_xrvgy"]
+[ext_resource type="PackedScene" uid="uid://dkrlk11k0f2fo" path="res://walls.tscn" id="2_i37i2"]
+
+[node name="GameBoard" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_xrvgy")]
+position = Vector2(576, 324)
+
+[node name="Walls" parent="." instance=ExtResource("2_i37i2")]
