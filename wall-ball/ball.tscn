@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crajdaofyk37h"]
+[gd_scene load_steps=5 format=3 uid="uid://crajdaofyk37h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="Gradient" id="Gradient_cbx31"]
 offsets = PackedFloat32Array(0.6533333, 0.69)
@@ -14,6 +18,7 @@ radius = 30.0
 
 [node name="Ball" type="RigidBody2D"]
 mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_cbx31")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_x8fbi")
