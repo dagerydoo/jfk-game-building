@@ -1,8 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://crajdaofyk37h"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
-friction = 0.0
-bounce = 1.0
+[ext_resource type="PhysicsMaterial" uid="uid://dnrrpv8dmfa6q" path="res://bouncy_physics.tres" id="1_x8fbi"]
 
 [sub_resource type="Gradient" id="Gradient_cbx31"]
 offsets = PackedFloat32Array(0.6533333, 0.69)
@@ -18,8 +16,10 @@ radius = 30.0
 
 [node name="Ball" type="RigidBody2D"]
 mass = 0.001
-physics_material_override = SubResource("PhysicsMaterial_cbx31")
+physics_material_override = ExtResource("1_x8fbi")
 gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_x8fbi")
