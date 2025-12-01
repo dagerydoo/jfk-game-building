@@ -1,11 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7wviut6fmfbr"]
+[gd_scene load_steps=6 format=3 uid="uid://c7wviut6fmfbr"]
 
+[ext_resource type="Script" uid="uid://b0ms15ipiwrfe" path="res://game_board.gd" id="1_xh13x"]
 [ext_resource type="PackedScene" uid="uid://crajdaofyk37h" path="res://ball.tscn" id="1_xrvgy"]
 [ext_resource type="PackedScene" uid="uid://dkrlk11k0f2fo" path="res://walls.tscn" id="2_i37i2"]
+[ext_resource type="PackedScene" uid="uid://d30k30b1x451q" path="res://paddle.tscn" id="3_17g6i"]
+[ext_resource type="LabelSettings" uid="uid://ib8s06km23j8" path="res://score_label_settings.tres" id="5_30eli"]
 
 [node name="GameBoard" type="Node2D"]
+script = ExtResource("1_xh13x")
 
 [node name="Ball" parent="." instance=ExtResource("1_xrvgy")]
 position = Vector2(576, 324)
+linear_velocity = Vector2(500, -500)
 
 [node name="Walls" parent="." instance=ExtResource("2_i37i2")]
+
+[node name="RightPaddle" parent="." instance=ExtResource("3_17g6i")]
+position = Vector2(1052, 324)
+
+[node name="LeftPaddle" parent="." instance=ExtResource("3_17g6i")]
+position = Vector2(100, 324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LeftScoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 39.68
+offset_bottom = 40.32
+text = "0"
+label_settings = ExtResource("5_30eli")
+
+[node name="RightScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1072.0
+offset_top = 40.0
+offset_right = 1112.0
+offset_bottom = 63.0
+text = "0"
+label_settings = ExtResource("5_30eli")
+
+[connection signal="ball_hit_left_wall" from="Walls" to="." method="_on_walls_ball_hit_left_wall"]
+[connection signal="ball_hit_right_wall" from="Walls" to="." method="_on_walls_ball_hit_right_wall"]
