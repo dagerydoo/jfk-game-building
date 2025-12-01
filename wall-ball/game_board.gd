@@ -41,8 +41,10 @@ func _reset_ball() -> void:
 func _on_walls_ball_hit_left_wall() -> void:
 	right_score += 1
 	print("Right score: ", right_score)
+	_reset_ball()
 
 
 func _on_walls_ball_hit_right_wall() -> void:
 	left_score += 1
 	print("Left score: ", left_score)
+	_reset_ball()
