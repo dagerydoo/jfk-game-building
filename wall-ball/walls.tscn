@@ -1,4 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkrlk11k0f2fo"]
+[gd_scene load_steps=14 format=3 uid="uid://dkrlk11k0f2fo"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dnrrpv8dmfa6q" path="res://bouncy_physics.tres" id="1_xxkwp"]
 
 [sub_resource type="Gradient" id="Gradient_oelu8"]
 colors = PackedColorArray(0.18431373, 0.21568628, 0.29411766, 1, 0.18431373, 0.21568628, 0.29411766, 1)
@@ -40,6 +42,7 @@ size = Vector2(20, 648)
 
 [node name="Top" type="StaticBody2D" parent="."]
 position = Vector2(576, 10)
+physics_material_override = ExtResource("1_xxkwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Top"]
 position = Vector2(-3.0517578e-05, -9.536743e-07)
@@ -51,6 +54,7 @@ shape = SubResource("RectangleShape2D_oelu8")
 
 [node name="Bottom" type="StaticBody2D" parent="."]
 position = Vector2(576, 638)
+physics_material_override = ExtResource("1_xxkwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bottom"]
 position = Vector2(0, -6.67572e-06)
@@ -62,6 +66,7 @@ shape = SubResource("RectangleShape2D_xxkwp")
 
 [node name="Left" type="StaticBody2D" parent="."]
 position = Vector2(10, 324)
+physics_material_override = ExtResource("1_xxkwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left"]
 position = Vector2(-1, 0)
@@ -71,13 +76,14 @@ texture = SubResource("GradientTexture2D_ftpcs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 shape = SubResource("RectangleShape2D_jt0p1")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Right" type="StaticBody2D" parent="."]
 position = Vector2(1142, 324)
+physics_material_override = ExtResource("1_xxkwp")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Right"]
 position = Vector2(-2.5629997e-06, 1.5258789e-05)
 scale = Vector2(0.3125001, 10.125001)
 texture = SubResource("GradientTexture2D_07yvr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 shape = SubResource("RectangleShape2D_ftpcs")
