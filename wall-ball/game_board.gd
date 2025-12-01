@@ -3,6 +3,8 @@ extends Node2D
 @onready var ball = $Ball
 @onready var left_paddle = $LeftPaddle
 @onready var right_paddle = $RightPaddle
+@onready var left_score_label = $CanvasLayer/LeftScoreLabel
+@onready var right_score_label = $CanvasLayer/RightScoreLabel
 
 @onready var ball_starting_position = ball.position
 @onready var ball_linear_velocity = ball.linear_velocity
@@ -40,11 +42,10 @@ func _reset_ball() -> void:
 
 func _on_walls_ball_hit_left_wall() -> void:
 	right_score += 1
-	print("Right score: ", right_score)
+	right_score_label.text = str(right_score)
 	_reset_ball()
-
 
 func _on_walls_ball_hit_right_wall() -> void:
 	left_score += 1
-	print("Left score: ", left_score)
+	left_score_label.text = str(left_score)
 	_reset_ball()
