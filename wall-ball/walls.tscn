@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkrlk11k0f2fo"]
+[gd_scene load_steps=13 format=3 uid="uid://dkrlk11k0f2fo"]
 
 [sub_resource type="Gradient" id="Gradient_oelu8"]
 colors = PackedColorArray(0.18431373, 0.21568628, 0.29411766, 1, 0.18431373, 0.21568628, 0.29411766, 1)
@@ -17,6 +17,24 @@ gradient = SubResource("Gradient_xxkwp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxkwp"]
 size = Vector2(1152, 20)
+
+[sub_resource type="Gradient" id="Gradient_jt0p1"]
+colors = PackedColorArray(0.18431373, 0.21568628, 0.29411766, 1, 0.18431373, 0.21568628, 0.29411766, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ftpcs"]
+gradient = SubResource("Gradient_jt0p1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt0p1"]
+size = Vector2(20, 648)
+
+[sub_resource type="Gradient" id="Gradient_ftpcs"]
+colors = PackedColorArray(0.18431373, 0.21568628, 0.29411766, 1, 0.18431373, 0.21568628, 0.29411766, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_07yvr"]
+gradient = SubResource("Gradient_ftpcs")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftpcs"]
+size = Vector2(20, 648)
 
 [node name="Walls" type="Node2D"]
 
@@ -41,3 +59,25 @@ texture = SubResource("GradientTexture2D_jt0p1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
 shape = SubResource("RectangleShape2D_xxkwp")
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(10, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="Left"]
+position = Vector2(-1, 0)
+scale = Vector2(0.28125, 10.125)
+texture = SubResource("GradientTexture2D_ftpcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource("RectangleShape2D_jt0p1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1142, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-2.5629997e-06, 1.5258789e-05)
+scale = Vector2(0.3125001, 10.125001)
+texture = SubResource("GradientTexture2D_07yvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ftpcs")
