@@ -19,6 +19,7 @@ radius = 30.0
 [node name="Ball" type="RigidBody2D"]
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_cbx31")
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_x8fbi")
